@@ -1,0 +1,16 @@
+package components
+
+templ ResultItem(title string, source string) {
+	<div class="result-item">
+		<input
+			type="checkbox"
+		/>
+		<div
+			class="result-item-content"
+		>
+			<h3>{ title }</h3>
+			<h3 class="download-source">{ source }</h3>
+			<img src="/assets/img/down.svg" class="download-icon"/>
+		</div>
+	</div>
+}

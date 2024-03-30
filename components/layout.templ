@@ -1,0 +1,140 @@
+package components
+
+templ Layout() {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>BettercopeLK</title>
+			<style type="text/css">
+				@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+				
+				:root {
+					--bg-color: #152232;
+					--bg-color-lighten: #1c2d42;
+					--bg-color-darken: #0b1622;
+					--border-color: #9fadbd;
+					--text-color: #9fadbd;
+					--text-hover-color: #c7d1db;
+					--btn-bg-color: #3db4f2;
+					--btn-hover-bg-color: #18a6f3;
+				}
+
+				* {
+					font-family: "Roboto", sans-serif;
+				}
+
+				body {
+					background-color: var(--bg-color);
+				}
+
+				.header {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					color: var(--text-color);
+					text-align: center;
+				}
+
+				.header h1 {
+					font-size: 40px;
+					margin-bottom: 8px;
+				}
+
+				.result-wrapper {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin-top: 20px;
+				}
+
+				.result-list {
+					background-color: var(--bg-color-darken);
+					border-radius: 10px;
+					padding: 5px 20px;
+					border: 2px dashed var(--border-color);
+					width: 70%;
+					max-height: 55vh;
+					overflow-x: hidden;
+					overflow-y: scroll;
+				}
+
+				.result-list::-webkit-scrollbar {
+					width: 2px;
+				}
+
+				.result-list::-webkit-scrollbar-track {
+					box-shadow: inset 0 0 6px var(--bg-color-lighten);
+				}
+
+				.result-list::-webkit-scrollbar-thumb {
+					background-color: darkgrey;
+					outline: 1px solid slategrey;
+				}
+
+				.result-item {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					background-color: var(--bg-color);
+					color: var(--text-color);
+					margin: 10px 0 10px 0;
+					padding: 7px;
+					border-radius: 5px;
+				}
+
+				.result-item:hover {
+					color: var(--text-hover-color);
+					background-color: var(--bg-color-lighten);
+					cursor: pointer;
+				}
+
+				.result-item:hover .download-icon {
+					display: unset;
+				}
+
+				.result-item:hover .download-source {
+					display: none;
+				}
+
+				.result-item h3 {
+					margin: 0;
+					font-size: 15px;
+				}
+
+				.result-item input[type="checkbox"] {
+					margin-right: 10px;
+					width: 15px;
+					height: 15px;
+					border-radius: 5px;
+					border: 1px solid var(--primary-border-color);
+					background-color: var(--bg-color);
+					accent-color: var(--primary-text-color);
+				}
+
+				.result-item-content {
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
+				}
+
+				.download-icon {
+					display: none;
+					height: 18px;
+				}
+
+				.spinner-img {
+					width: 100px;
+				}
+			</style>
+			<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+			<script src="https://unpkg.com/htmx.org@1.9.11"></script>
+			<script src="https://unpkg.com/htmx.org@1.9.11/dist/ext/sse.js"></script>
+		</head>
+		<body>
+			{ children... }
+		</body>
+	</html>
+}

@@ -1,0 +1,7 @@
+package components
+
+templ ResultsList() {
+	<div class="result-wrapper">
+		<div id="result-list" class="result-list" hx-ext="sse" sse-connect="/sse" sse-swap="result" hx-swap="beforeend"></div>
+	</div>
+}
